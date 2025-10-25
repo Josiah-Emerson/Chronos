@@ -16,6 +16,10 @@ Metrics:
  - EV to Sales 
 
 TODO:
+- Change DB design so that stage one has reasoning id which links to an entry in analysis
+    - Update so that stage three reasoning id is actually a thesis
+    - Change the api to reflect returning a reasoning id and a thesis
+- Add in the possible codes it can return
 - Check with cros to see what data types the metrics should be
     - i.e. how much precision is needed for most metrics?
 - Check if news API provides title. If it doesn't, change the articles title to be null if needec

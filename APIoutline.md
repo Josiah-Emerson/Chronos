@@ -71,6 +71,17 @@ Returns all entries for stage three
     - active (boolean): whether this entry is active for this stage
     - time (time): time the entry was logged in this stage (see time for details on what this value looks like)
 
+### POST "/stageOne"
+#### Description
+Create an entry in stage one
+#### Paramaters
+- {REQ} security_id (integer): The unique id for the corresponding security
+- {REQ} partnerUUID (integer): The unique linking id for the partner entering this entry
+- {OPT} reasoning (string): The reasoning behind the interest to be added to an analysis entry under type reasoning
+
+#### Response Attributes
+- N/A
+
 ### 
 #### Description
 #### Paramaters
