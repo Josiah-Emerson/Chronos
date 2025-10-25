@@ -4,12 +4,15 @@ CREATE TABLE partner (
    external_uuid TEXT UNIQUE NOT NULL --Link to partner details in auth table for login
 );
 
+-- insert AI partner into database
+INSERT INTO partner(email, external_uuid) VALUES ("e.a.josiah@gmail.com", "0000-0000-0000");
+
 CREATE TABLE sector_type_enum (
    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
    sector_type TEXT NOT NULL
 );
 
-INSERT INTO sector_type_enum VALUES
+INSERT INTO sector_type_enum(sector_type) VALUES
 ('Communication Services'),
 ('Consumer Discretionary'),
 ('Consumer Staples'),
@@ -69,7 +72,7 @@ CREATE TABLE decision_type_enum (
    decision_type TEXT NOT NULL UNIQUE
 );
 
-INSERT INTO decision_type_enum VALUES 
+INSERT INTO decision_type_enum(decision_type) VALUES 
 ('buy'),
 ('wait'),
 ('decline');
@@ -93,7 +96,7 @@ CREATE TABLE sentiment_type_enum (
    sentiment_type TEXT NOT NULL UNIQUE
 );
 
-INSERT INTO sentiment_type_enum VALUES 
+INSERT INTO sentiment_type_enum(sentiment_type) VALUES 
 ('positive'),
 ('neutral'),
 ('negative');
@@ -123,7 +126,7 @@ CREATE TABLE analysis_type_enum (
    analysis_type TEXT NOT NULL UNIQUE
 );
 
-INSERT INTO analysis_type_enum VALUES 
+INSERT INTO analysis_type_enum(analysis_type) VALUES 
 ("thesis"),
 ("future_analysis"),
 ("decision_reasoning"),

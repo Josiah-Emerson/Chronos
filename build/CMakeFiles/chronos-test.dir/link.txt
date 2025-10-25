@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/chronos-test.dir/tests/test.cpp.o -o chronos-test  lib/Catch2/src/libCatch2Main.a lib/Catch2/src/libCatch2.a 
