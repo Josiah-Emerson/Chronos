@@ -20,7 +20,7 @@ General JSON object representing the basics of a security
 Returns all entries for stage one
 
 #### Paramaters
-- None
+- {OPT} id (integer): When valid input, response will contain only the specified entry for this id number
 
 #### Response Attributes
 - count (integer): number of results
@@ -28,6 +28,50 @@ Returns all entries for stage one
     - id (integer): id for stage one entry
     - security (object): object representing the security, see Main JSON Objects
     - reasoning (string or NULL): reasoning for interest in security
-    - partnerUUID (integer): unique integer which links partners in chronos' db and the auth db
+    - partnerUUID (integer): unique integer which links partners in chronos' db and the auth db. The person who created this entry
     - active (boolean): whether this entry is active for this stage
     - time (time): time the entry was logged in this stage (see time for detailso n what this value looks like)
+
+### GET "/stageTwo"
+#### Description
+Returns all entries for stage two
+
+#### Paramaters
+- {OPT} id (integer): When valid input, response will contain only the specified entry for this id number
+
+#### Response Attributes
+- count (integer): number of results
+- results (array(objects)): array of objects representing results
+    - id (integer): id for stage two entry
+    - prev_link_id (integer or NULL): the stage one id which preceded this stage two entry if available
+    - security (object): object representing the security, see Main JSON Objects
+    - research_partnerUUID (integer or NULL): unique integer which links partners in chronos' db and the auth db. The person who is researching
+    - active (boolean): whether this entry is active for this stage
+    - time (time): time the entry was logged in this stage (see time for details on what this value looks like)
+
+### GET "/stageThree"
+#### Description
+Returns all entries for stage three
+
+#### Paramaters
+- {OPT} id (integer): When valid input, response will contain only the specified entry for this id number
+
+#### Response Attributes
+- count (integer): number of results
+- results (array(objects)): array of objects representing results
+    - id (integer): id for stage three entry
+    - prev_link_id (integer or NULL): the stage two id which preceded this stage two entry if available
+    - security (object): object representing the security, see Main JSON object 
+    - decision (enum(string)): the decision made on the security
+    - reasoning (object): object for reasoning. See structure:
+        - id (integer): id for the reasoning 
+        - reasoning (string): reasoning behind decision
+        - partnerUUID (integer): unique identifier for the partner which wrote this reasoning
+        - time (time): time written
+    - active (boolean): whether this entry is active for this stage
+    - time (time): time the entry was logged in this stage (see time for details on what this value looks like)
+
+### 
+#### Description
+#### Paramaters
+#### Response Attributes
