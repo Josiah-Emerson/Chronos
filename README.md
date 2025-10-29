@@ -16,6 +16,8 @@ Metrics:
  - EV to Sales 
 
 TODO:
+- Look into intermediary table for metrics (ids for different types of metrics)
+- Refactor analysis table (for example, a thesis review has no way of showing which thesis it goes to for that specific security) Don't need to change if we only want one thesis, but def something to think about)
 - Change DB design so that stage one has reasoning id which links to an entry in analysis
     - Update so that stage three reasoning id is actually a thesis
     - Change the api to reflect returning a reasoning id and a thesis

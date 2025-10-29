@@ -71,7 +71,7 @@ Returns all entries for stage three
     - active (boolean): whether this entry is active for this stage
     - time (time): time the entry was logged in this stage (see time for details on what this value looks like)
 
-### POST "/stageOne"
+### PUT "/stageOne"
 #### Description
 Create an entry in stage one
 #### Paramaters
@@ -80,7 +80,29 @@ Create an entry in stage one
 - {OPT} reasoning (string): The reasoning behind the interest to be added to an analysis entry under type reasoning
 
 #### Response Attributes
-- N/A
+- id (integer): The id of newly created stage one entry
+
+### PUT "/stageTwo"
+#### Description
+Create an entry in stage two
+#### Paramaters
+- {REQ} stage_one_id (integer): The stage 1 id of the entry to promote to stage two
+- {OPT} partnerUUID (integer): unique identifier for the partner which is chosen to research it
+#### Response Attributes
+- id (integer): The id of the newly created stage two entry
+
+### PUT "/stageThree"
+#### Description
+Create a new entry in stage three, as well as the required reasoning 
+#### Paramaters
+- {REQ} stage_two_id (integer): The stage 2 id of the entry to promote to stage three
+- {REQ} decision (enum(string)): The decision to be made ("buy", "wait", "decline")
+- {REQ} reasoning (object): object for reasoning
+    - {REQ}: reasoning (string): the reasoning for the decision 
+    - {REQ}: partnerUUID (integer): unique identifier for who wrote this description
+#### Response Attributes
+- id (integer): The id of the newly created stage three entry
+
 
 ### 
 #### Description
